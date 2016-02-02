@@ -1,0 +1,34 @@
+{
+  "name": "fetest",
+  "version": "1.0.0",
+  "description": "Frontend Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node_modules/.bin/webpack-dev-server --content-base app --hot"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "html-loader": "^0.4.0",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.12",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "angular": "^1.4.9",
+    "angular-ui-router": "^0.2.17",
+    "bourbon": "^4.2.6",
+    "jquery": "^2.2.0",
+    "lodash": "^4.1.0",
+    "moment": "^2.11.1",
+    "node-lumx": "^1.0.0",
+    "node-reset-scss": "^1.0.1",
+    "velocity-animate": "^1.2.3"
+  }
+}
