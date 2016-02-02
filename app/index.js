@@ -1,17 +1,17 @@
 'use strict';
 
 require('angular-ui-router');
+require('./services/services');
+require('./layout/layout');
 
-var mod = angular.module('app', [
+module.exports = angular.module('app', [
   'ui.router',
-  'lumx'
-]);
-
-mod.config([
+  'lumx',
+  'app.services',
+  'app.layout'
+]).config([
   '$urlRouterProvider',
   function ($urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
   }
 ]);
-
-module.exports = mod;
