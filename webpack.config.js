@@ -10,9 +10,6 @@ module.exports = {
   entry: {
     app: ['webpack/hot/dev-server', './core/bootstrap.js']
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
   output: {
     path: APP,
     filename: 'bundle.js'
@@ -25,9 +22,12 @@ module.exports = {
         loader: 'style!css!sass'
       },
       {
-        // ASSET LOADER
-        test: /\.(woff|woff2|ttf|eot)$/,
-        loader: 'file'
+        test: /\.css$/,
+        loader: "style!css"
+      },
+      {
+        test: /\.(woff|woff2|ttf|eot|svg)(\?]?.*)?$/,
+        loader : 'file-loader?name=res/[name].[ext]?[hash]'
       },
       {
         test: /\.(png|jpg|gif)$/,
@@ -36,8 +36,18 @@ module.exports = {
       {
         // HTML LOADER
         test: /\.html$/,
-        loader: 'html-loader'
+        loader: 'raw'
       },
+      {
+        test: /\.json/,
+        loader: 'json'
+      }
     ]
-  }
+  },
+  resolve: {
+    root: APP
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ]
 };
